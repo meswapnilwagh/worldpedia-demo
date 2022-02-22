@@ -9,6 +9,8 @@ const images = {
     na: require('../assets/images/northAmerica.png'),
     oc: require('../assets/images/ociania.png'),
     sa: require('../assets/images/southAmerica.png'),
+    glob: require('../assets/images/globe.gif'),
+    world: require('../assets/images/world-map.jpeg'),
 }
 
 export { images }

@@ -4,9 +4,10 @@ import { Continent } from 'worldpedia';
 import Card from '../components/Card/Card';
 import { images } from '../constants/images';
 import Layout from './Layout';
+import * as _ from 'lodash';
 
 const Home = () => {
-    const continents = Continent.getAllContinents();
+    const continents = _.sortBy(Continent.getAllContinents(),'name');
 
     return (
         <Layout title="Continents">

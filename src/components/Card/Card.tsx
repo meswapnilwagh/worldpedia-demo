@@ -10,7 +10,7 @@ interface ICard {
 const Card = ({ image, name, children }: ICard) => {
     return (
         <>
-            <div className="card  md:w-80  bg-white shadow-xl mr-5 mb-5 lg:mr-10 lg:mb-10 md:mr-2 md:mb-5 bordered">
+            <div className="card bg-white shadow-xl mr-5 mb-5 w-96 md:mr-5 md:mb-5 lg:mr-10 lg:mb-10 xl:mr-5 xl:mb-4 xl:w-80 border border-primary">
                 <figure className='mt-8'>
                     {image
                         ? <img src={image} alt={name} className="h-28" />

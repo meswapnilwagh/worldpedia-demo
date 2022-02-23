@@ -1,11 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Country } from 'worldpedia';
-import CountryDetail from '../components/Country/CountryDetail';
+
 const CountryPage = () => {
     const { id } = useParams();
     const renderCountry = () => {
-        return <CountryDetail id={id!} />
+        return <h1> </h1>
     }
 
     const renderCountries = () => {

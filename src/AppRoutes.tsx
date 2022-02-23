@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import ContinentCountries from './pages/ContinentCountries';
 import ContinentRegions from './pages/ContinentRegions';
 import CountryStates from './pages/CountryStates';
+import SubregionCountries from './pages/SubregionCountries';
+import Cities from './pages/Cities';
 
 const AppRoutes = () => {
     return (
@@ -15,8 +17,9 @@ const AppRoutes = () => {
                     <Route path="/continent/countries/:id" element={<ContinentCountries />} />
                     <Route path="/continent/subregions/:id" element={<ContinentRegions />} />
                 </Route>
-                <Route path="/subregions/countries/:id" element={<ContinentRegions />} />
+                <Route path="/subregion/countries/:id" element={<SubregionCountries />} />
                 <Route path="/states/:id" element={<CountryStates />} />
+                <Route path="/state/cities/:countryId/:stateId" element={<Cities />} />
                 <Route path="/country" element={<CountryPage />} />
                 <Route path="/country/:id" element={<CountryPage />} />
             </Route>

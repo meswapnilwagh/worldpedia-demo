@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Continent, Country } from 'worldpedia';
-import Card from '../components/Card/Card';
-import Layout from './Layout';
 import * as _ from 'lodash';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { Continent, Country } from 'worldpedia';
+import CountryList from '../components/Country/CountryList';
+import Layout from './Layout';
 
 const ContinentCountries = () => {
     const { id } = useParams();
@@ -12,16 +12,7 @@ const ContinentCountries = () => {
 
     return (
         <Layout title={`Countries of ${cont?.name}`}>
-            {countries && countries.map(country => {
-                return (
-                    <Card key={country.iso2} image={country.flag} name={`${country.name}`} >
-                        <div className='card-actions flex justify-around mt-1'>
-                            <button className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
-                            <Link to={`/states/${country.iso2}`} className="btn btn-secondary btn-outline normal-case">States</Link>
-                        </div>
-                    </Card>
-                )
-            })}
+            <CountryList countries={countries} />
         </Layout>
     )
 }

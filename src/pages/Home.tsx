@@ -7,10 +7,11 @@ import Layout from './Layout';
 import * as _ from 'lodash';
 
 const Home = () => {
-    const continents = _.sortBy(Continent.getAllContinents(),'name');
+    const continents = _.sortBy(Continent.getAllContinents(), 'name');
 
     return (
         <Layout title="Continents">
+
             {continents && continents.map(continent => {
                 const code = continent.code.toLowerCase() as keyof typeof images;
                 return (

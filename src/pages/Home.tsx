@@ -11,18 +11,19 @@ const Home = () => {
 
     return (
         <Layout title="Continents">
-
-            {continents && continents.map(continent => {
-                const code = continent.code.toLowerCase() as keyof typeof images;
-                return (
-                    <Card key={continent.code} image={images[code]} name={`${continent.name}-${continent.code}`}>
-                        < div className='card-actions flex justify-around mt-1'>
-                            <Link to={`/continent/subregions/${continent.code}`} className="btn btn-secondary btn-outline normal-case">Subregions</Link>
-                            <Link to={`/continent/countries/${continent.code}`} className="btn btn-secondary btn-outline normal-case">Countries</Link>
-                        </div>
-                    </Card>
-                )
-            })}
+            <div className='flex flex-wrap h-fit w-full'>
+                {continents && continents.map(continent => {
+                    const code = continent.code.toLowerCase() as keyof typeof images;
+                    return (
+                        <Card key={continent.code} image={images[code]} name={`${continent.name}`}>
+                            < div className='card-actions flex justify-around mt-1'>
+                                <Link to={`/continent/subregions/${continent.code}`} className="btn btn-secondary btn-outline normal-case">Subregions</Link>
+                                <Link to={`/continent/countries/${continent.code}`} className="btn btn-secondary btn-outline normal-case">Countries</Link>
+                            </div>
+                        </Card>
+                    )
+                })}
+            </div>
         </Layout>
 
     )

@@ -19,10 +19,10 @@ const CountryList = (props: Props) => {
     }
 
     return (
-        <>
+        <div className='flex flex-wrap h-fit w-full'>
             {countries && countries.map(country => {
                 return (
-                    <Card key={country.iso2} image={country.flag} name={`${country.name}`} >
+                    <Card key={country.iso2} image={country.flag} name={`${country.name}`} imageBorder={true}>
                         <div className='card-actions flex justify-around mt-1'>
                             <button onClick={() => handleShowDetails(country)} className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
                             <Link to={`/states/${country.iso2}`} className="btn btn-secondary btn-outline normal-case">States</Link>
@@ -35,17 +35,18 @@ const CountryList = (props: Props) => {
                     title="Country Details"
                     open={show}
                     onClose={() => setShow(false)}
+                    className="h-4/5"
                 >
-                    <div className="mockup-code">
+                    <div className="mockup-code overflow-y-auto h-[98%] border border-secondary">
                         <pre data-prefix="">
-                            <code>
+                            <code className='py-10'>
                                 {JSON.stringify(selectedCountry, null, 2)}
                             </code>
                         </pre>
                     </div>
                 </CustomPopup>
             }
-        </>
+        </div>
     )
 }
 

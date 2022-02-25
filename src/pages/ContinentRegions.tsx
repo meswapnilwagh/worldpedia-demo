@@ -12,15 +12,17 @@ const ContinentRegions = () => {
     const subregions = Subregion.getAllSubregionByContinent(id?.toUpperCase()!);
     return (
         <Layout title={`Regions of ${cont?.name}`}>
-            {subregions && subregions.map(region => {
-                return (
-                    <Card key={region.name} name={`${region.name}`} >
-                        <div className='card-actions flex justify-around mt-1'>
-                            <Link to={`/subregion/countries/${region.name}`} className="btn btn-secondary btn-outline normal-case">Countries</Link>
-                        </div>
-                    </Card>
-                )
-            })}
+            <div className='flex flex-wrap h-fit w-full'>
+                {subregions && subregions.map(region => {
+                    return (
+                        <Card key={region.name} name={`${region.name}`} >
+                            <div className='card-actions flex justify-around mt-1'>
+                                <Link to={`/subregion/countries/${region.name}`} className="btn btn-secondary btn-outline normal-case">Countries</Link>
+                            </div>
+                        </Card>
+                    )
+                })}
+            </div>
         </Layout>
     )
 }

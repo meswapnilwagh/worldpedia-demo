@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import * as _ from 'lodash';
 import CustomPopup from '../components/CustomPopup/CustomPopup';
 import { IState } from 'worldpedia/lib/interfaces';
+import NoRecord from '../components/NoRecord/NoRecord';
 
 const CountryStates = () => {
     const { id } = useParams();
@@ -20,27 +21,30 @@ const CountryStates = () => {
     }
     return (
         <Layout title={`States of ${country?.name}`}>
-            {states && states.map(state => {
-                return (
-                    <Card key={state.name} name={`${state.name}`} >
-                        <div className='card-actions flex justify-around mt-1'>
-                            <button onClick={() => handleShowDetails(state)} className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
-                            <Link to={`/state/cities/${id}/${state.isoCode}`} className="btn btn-secondary btn-outline normal-case">Cities</Link>
-                        </div>
-                    </Card>
-                )
-            })}
+            {states.length > 0
+                ? states.map(state => {
+                    return (
+                        <Card key={state.name} name={`${state.name}`} >
+                            <div className='card-actions flex justify-around mt-1'>
+                                <button onClick={() => handleShowDetails(state)} className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
+                                <Link to={`/state/cities/${id}/${state.isoCode}`} className="btn btn-secondary btn-outline normal-case">Cities</Link>
+                            </div>
+                        </Card>
+                    )
+                })
+                : <NoRecord />
+            }
 
             {show &&
                 <CustomPopup
-                    title="Country Details"
+                    title="State Details"
                     open={show}
                     onClose={() => setShow(false)}
                 >
-                    <div className="mockup-code">
+                    <div className="mockup-code overflow-y-auto h-[98%] border border-secondary">
                         <pre data-prefix="">
                             <code>
-                                {JSON.stringify(selectedState, null, 2)}
+                                {JSON.stringify(selectedState, null, 4)}
                             </code>
                         </pre>
                     </div>

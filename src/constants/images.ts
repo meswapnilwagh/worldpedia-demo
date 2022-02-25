@@ -11,6 +11,9 @@ const images = {
     sa: require('../assets/images/southAmerica.png'),
     glob: require('../assets/images/globe.gif'),
     world: require('../assets/images/world-map.jpeg'),
+    noRecord: require('../assets/images/no-record.png'),
+    empty: require('../assets/images/empty.png'),
+
 }
 
 export { images }

@@ -11,4 +11,11 @@
   body{
     overflow:hidden;
   }
+  .height-98vh{
+    height:98vh;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
 }

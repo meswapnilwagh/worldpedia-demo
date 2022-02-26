@@ -1,7 +1,7 @@
 interface IImages {
     [key: string]: any;
 }
-const images = {
+const images: IImages = {
     af: require('../assets/images/africa.png'),
     an: require('../assets/images/ociania.png'),
     as: require('../assets/images/asia.png'),

@@ -1,9 +1,9 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { City, State } from 'worldpedia';
-import Layout from './Layout';
-import Card from '../components/Card/Card';
 import * as _ from 'lodash';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { City, State } from 'worldpedia';
+import Card from '../components/Card/Card';
+import Layout from './Layout';
 
 const Cities = () => {
     const { countryId, stateId } = useParams();

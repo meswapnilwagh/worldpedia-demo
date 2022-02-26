@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../Button/Button';
 import Dialog from './Dialog';
 interface Props {
     title: string;

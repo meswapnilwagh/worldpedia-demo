@@ -1,10 +1,8 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Continent, Subregion } from 'worldpedia';
-import Layout from './Layout';
 import Card from '../components/Card/Card';
-import { Link } from 'react-router-dom';
-import { images } from '../constants/images';
+import Layout from './Layout';
 
 const ContinentRegions = () => {
     const { id } = useParams();

@@ -10,8 +10,8 @@ const Home = () => {
     const continents = _.sortBy(Continent.getAllContinents(), 'name');
 
     return (
-        <Layout title="Continents">
-            <div className='flex flex-wrap h-fit w-full'>
+        <Layout title="Continents" showButton={true}>
+            <div className='flex flex-wrap h-fit w-full justify-center'>
                 {continents && continents.map(continent => {
                     const code = continent.code.toLowerCase() as keyof typeof images;
                     return (

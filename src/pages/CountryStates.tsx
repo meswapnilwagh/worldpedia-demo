@@ -21,35 +21,37 @@ const CountryStates = () => {
     }
     return (
         <Layout title={`States of ${country?.name}`}>
-            {states.length > 0
-                ? states.map(state => {
-                    return (
-                        <Card key={state.name} name={`${state.name}`} >
-                            <div className='card-actions flex justify-around mt-1'>
-                                <button onClick={() => handleShowDetails(state)} className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
-                                <Link to={`/state/cities/${id}/${state.isoCode}`} className="btn btn-secondary btn-outline normal-case">Cities</Link>
-                            </div>
-                        </Card>
-                    )
-                })
-                : <NoRecord />
-            }
+            <div className='flex flex-wrap h-fit w-full justify-center'>
+                {states.length > 0
+                    ? states.map(state => {
+                        return (
+                            <Card key={state.name} name={`${state.name}`} >
+                                <div className='card-actions flex justify-around mt-1'>
+                                    <button onClick={() => handleShowDetails(state)} className="btn modal-button btn-secondary btn-outline normal-case">Details</button>
+                                    <Link to={`/state/cities/${id}/${state.isoCode}`} className="btn btn-secondary btn-outline normal-case">Cities</Link>
+                                </div>
+                            </Card>
+                        )
+                    })
+                    : <NoRecord />
+                }
 
-            {show &&
-                <CustomPopup
-                    title="State Details"
-                    open={show}
-                    onClose={() => setShow(false)}
-                >
-                    <div className="mockup-code overflow-y-auto h-[98%] border border-secondary">
-                        <pre data-prefix="">
-                            <code>
-                                {JSON.stringify(selectedState, null, 4)}
-                            </code>
-                        </pre>
-                    </div>
-                </CustomPopup>
-            }
+                {show &&
+                    <CustomPopup
+                        title="State Details"
+                        open={show}
+                        onClose={() => setShow(false)}
+                    >
+                        <div className="mockup-code overflow-y-auto h-[98%] border border-secondary">
+                            <pre data-prefix="">
+                                <code>
+                                    {JSON.stringify(selectedState, null, 4)}
+                                </code>
+                            </pre>
+                        </div>
+                    </CustomPopup>
+                }
+            </div>
         </Layout>
     )
 }

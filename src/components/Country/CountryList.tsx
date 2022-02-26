@@ -7,8 +7,6 @@ interface Props {
     countries: ICountry[];
 }
 
-
-
 const CountryList = (props: Props) => {
     const { countries } = props;
     const [show, setShow] = useState<boolean>(false);
@@ -19,7 +17,7 @@ const CountryList = (props: Props) => {
     }
 
     return (
-        <div className='flex flex-wrap h-fit w-full'>
+        <div className='flex flex-wrap h-fit w-full justify-center'>
             {countries && countries.map(country => {
                 return (
                     <Card key={country.iso2} image={country.flag} name={`${country.name}`} imageBorder={true}>
